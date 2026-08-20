@@ -72,23 +72,6 @@
     color: #9fdc8f;
     letter-spacing: .02em;
   }
-  .patreon {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 36px;
-    padding: 12px 26px;
-    border: 2px solid #000;
-    border-radius: 999px;
-    text-decoration: none;
-    background: #ff424d;
-    box-shadow: inset 0 3px 6px rgba(255,255,255,.35), 0 0 14px rgba(255,66,77,.6);
-    font-weight: 600;
-    font-size: 16px;
-    color: #fff;
-    letter-spacing: .02em;
-  }
-  .patreon svg { width: 20px; height: 20px; display: block; }
 </style>
 </head>
 <body>
@@ -120,13 +103,6 @@
     <div class="rule"></div>
     <div class="tagline" id="tagline">Something's cooking...</div>
     <div class="sub" id="sub">Goblin Feast is back! Stay tuned!</div>
-    <a class="patreon" id="patreon" href="https://www.patreon.com/c/GoblinFeast" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="4.4" height="18" fill="#fff"/>
-        <circle cx="15.2" cy="9.8" r="6.8" fill="#fff"/>
-      </svg>
-      <span id="patreon-label">Support on Patreon</span>
-    </a>
   </div>
   <script>
     var STRINGS = {
@@ -137,7 +113,6 @@
       var t = STRINGS[lang];
       document.getElementById('tagline').textContent = t.tagline;
       document.getElementById('sub').textContent = t.sub;
-      document.getElementById('patreon-label').textContent = t.patreon;
       document.getElementById('flag-en').style.opacity = lang === 'en' ? 1 : 0.4;
       document.getElementById('flag-pt').style.opacity = lang === 'pt' ? 1 : 0.4;
     }
