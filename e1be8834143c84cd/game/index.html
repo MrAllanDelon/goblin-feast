@@ -7,7 +7,7 @@
 <title>The Game &middot; Goblin Feast 64</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { min-height: 100%; }
+  html, body { min-height: 100%; overflow-x: hidden; }
   @font-face {
     font-family: 'A Dripping Marker';
     font-display: swap;
@@ -73,6 +73,7 @@
   footer a { color: #f527bb; text-decoration: underline; }
 
   /* ---- The Game page (scoped tg- prefix, does not affect other pages) ---- */
+  body.game-page main { max-width: 1600px; padding: 48px 48px 80px; }
   .tg-hero { margin-top: 4px; height: 560px; border: 11px solid #36df1d; border-radius: 45px; background: linear-gradient(120deg,#23c415,#2bd61a 57%,#1d9f11); box-shadow: 0 0 28px rgba(65,255,32,.42), inset 0 0 80px rgba(0,0,0,.22); display: grid; grid-template-columns: 45% 55%; overflow: hidden; position: relative; text-align: left; }
   .tg-visual { position: relative; padding: 38px 20px 38px 34px; display: flex; align-items: center; }
   .tg-screen { width: 100%; aspect-ratio: 2.06/1; background: #050505; border: 8px solid #101010; box-shadow: 0 0 0 4px #ef2abd, 0 18px 25px rgba(0,0,0,.45); overflow: hidden; transform: rotate(-1.2deg); position: relative; }
@@ -106,6 +107,7 @@
   .tg-ticker { margin-top: 14px; min-height: 30px; background: #39f11c; color: #000; font-weight: 1000; display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: .5px; text-align: center; padding: 6px 12px; border-radius: 6px; }
 
   @media (max-width: 1100px) {
+    body.game-page main { padding: 40px 24px 60px; }
     .tg-title { font-size: 48px; }
     .tg-eyebrow { font-size: 20px; }
     .tg-sub { font-size: 20px; }
@@ -113,6 +115,7 @@
     .tg-features { gap: 14px; }
   }
   @media (max-width: 800px) {
+    body.game-page main { padding: 32px 16px 48px; }
     .tg-hero { height: auto; grid-template-columns: 1fr; }
     .tg-visual { padding: 22px 20px 10px; }
     .tg-burst { width: 110px; height: 110px; font-size: 16px; }
@@ -126,7 +129,7 @@
   }
 </style>
 </head>
-<body>
+<body class="game-page">
   <div class="desktop-header">
   <div style="position:relative;width:100%;background:#000;">
     <div id="header-stage" style="position:relative;width:1920px;height:290px;transform-origin:top left;--tox:#44e826;--pink:#f527bb;--out:-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000,0 0 2px #000,0 4px 5px rgba(0,0,0,.55);font-family:'A Dripping Marker',cursive;background:#000;">
