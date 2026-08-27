@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /e1be8834143c84cd/
+
+Sitemap: https://goblinfeastgame.com/sitemap.xml
