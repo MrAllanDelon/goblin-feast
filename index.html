@@ -3,6 +3,20 @@
 <head>
   <meta charset="utf-8">
     <title>Goblin Feast</title>
+    <meta name="description" content="Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink — now also a wild 64-bit video game.">
+    <link rel="canonical" href="https://goblinfeastgame.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Goblin Feast">
+    <meta property="og:title" content="Goblin Feast">
+    <meta property="og:description" content="Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink — now also a wild 64-bit video game.">
+    <meta property="og:url" content="https://goblinfeastgame.com/">
+    <meta property="og:image" content="https://goblinfeastgame.com/game/assets/the-game-hero.png">
+    <meta property="og:image:width" content="1547">
+    <meta property="og:image:height" content="749">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Goblin Feast">
+    <meta name="twitter:description" content="Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink — now also a wild 64-bit video game.">
+    <meta name="twitter:image" content="https://goblinfeastgame.com/game/assets/the-game-hero.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -389,6 +403,22 @@ document.addEventListener('DOMContentLoaded', async function() {
   </script>
 <script>
   (function () {
+    var METAS = [
+      { tag: 'meta', attrs: { name: 'description', content: "Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink \u2014 now also a wild 64-bit video game." } },
+      { tag: 'link', attrs: { rel: 'canonical', href: "https://goblinfeastgame.com/" } },
+      { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+      { tag: 'meta', attrs: { property: 'og:site_name', content: 'Goblin Feast' } },
+      { tag: 'meta', attrs: { property: 'og:title', content: "Goblin Feast" } },
+      { tag: 'meta', attrs: { property: 'og:description', content: "Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink \u2014 now also a wild 64-bit video game." } },
+      { tag: 'meta', attrs: { property: 'og:url', content: "https://goblinfeastgame.com/" } },
+      { tag: 'meta', attrs: { property: 'og:image', content: "https://goblinfeastgame.com/game/assets/the-game-hero.png" } },
+      { tag: 'meta', attrs: { property: 'og:image:width', content: "1547" } },
+      { tag: 'meta', attrs: { property: 'og:image:height', content: "749" } },
+      { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+      { tag: 'meta', attrs: { name: 'twitter:title', content: "Goblin Feast" } },
+      { tag: 'meta', attrs: { name: 'twitter:description', content: "Feed the Goblin. Unleash the Beast. Goblin Feast is the maximum-fizz, mystery-flavor energy drink \u2014 now also a wild 64-bit video game." } },
+      { tag: 'meta', attrs: { name: 'twitter:image', content: "https://goblinfeastgame.com/game/assets/the-game-hero.png" } }
+    ];
     var FAVICONS = [
       { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
       { rel: 'icon', href: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
@@ -406,6 +436,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (f.sizes) link.sizes = f.sizes;
         if (f.type) link.type = f.type;
         document.head.appendChild(link);
+      });
+      METAS.forEach(function (m) {
+        var selectorParts = [];
+        for (var k in m.attrs) {
+          if (k === 'content' || k === 'href') continue;
+          selectorParts.push('[' + k + '="' + m.attrs[k] + '"]');
+        }
+        var sel = m.tag + selectorParts.join('');
+        var el = document.head.querySelector(sel);
+        if (!el) {
+          el = document.createElement(m.tag);
+          for (var k2 in m.attrs) {
+            if (k2 === 'content' || k2 === 'href') continue;
+            el.setAttribute(k2, m.attrs[k2]);
+          }
+          document.head.appendChild(el);
+        }
+        if ('content' in m.attrs) el.setAttribute('content', m.attrs.content);
+        if ('href' in m.attrs) el.setAttribute('href', m.attrs.href);
       });
     }
     ensureHead();
